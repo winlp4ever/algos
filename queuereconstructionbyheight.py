@@ -4,6 +4,7 @@ class Solution:
     '''
     Link to problem:https://leetcode.com/problems/queue-reconstruction-by-height/
     Complexity: O(n^2)
+    If u can find an array-based data structure that allows insert in O(1) then the complexity become O(nlogn)
     '''
     def reconstructQueue(self, people: List[List[int]]) -> List[List[int]]:
         if not people:
