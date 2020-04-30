@@ -1,0 +1,18 @@
+judge: Case #1 fails:
+judge: Input is not a permutation of ABCDE.
+Traceback (most recent call last):
+  File "interactive_runner.py", line 98, in <module>
+    t_sol.join()
+  File "/home/redlcamille/anaconda3/lib/python3.7/threading.py", line 1044, in join
+    self._wait_for_tstate_lock()
+  File "/home/redlcamille/anaconda3/lib/python3.7/threading.py", line 1060, in _wait_for_tstate_lock
+    elif lock.acquire(block, timeout):
+KeyboardInterrupt
+  sol: BBAAATraceback (most recent call last):
+  sol:   File "power-arrangers.py", line 34, in <module>
+  sol:     
+  sol:   File "power-arrangers.py", line 26, in sol
+  sol:     phase(vals, sol, pos)
+  sol:   File "power-arrangers.py", line 12, in phase
+  sol:     c = input()
+  sol: KeyboardInterrupt
