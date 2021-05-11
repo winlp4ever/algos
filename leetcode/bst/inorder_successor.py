@@ -78,7 +78,18 @@ def test2():
   insert(n, 10)
   assert inOrderSuccessor(n, findNode(n, 7)).data == 8, "found %d, should be %d" % (inOrderSuccessor(n, findNode(n, 7)).data, 8)
 
+def test3():
+  n = insert(None, 10)
+  insert(n, 5)
+  insert(n, 7)
+  insert(n, 9)
+  insert(n, 8)
+  insert(n, 11)
+  assert inOrderSuccessor(n, findNode(n, 11)) == None, "found %d, should be %d" % (inOrderSuccessor(n, findNode(n, 11)).data, None)
+
+
 if __name__ == '__main__':
   test0()
   test1()
   test2()
+  test3()
