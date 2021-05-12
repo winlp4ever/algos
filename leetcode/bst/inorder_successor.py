@@ -1,13 +1,8 @@
-class Node(object):
-  def __init__(self, key: int):
-    self.data = key
-    self.left = None 
-    self.right = None
-
+from .binarytree import Node, insert, findMin, findNode
 
 def inOrderSuccessor(root: Node, n: Node) -> Node:
   if n.right is not None:
-    return findLeftMost(n.right)
+    return findMin(n.right)
   stk = None
   val = n.data
   curr = root
@@ -20,40 +15,8 @@ def inOrderSuccessor(root: Node, n: Node) -> Node:
   if not stk:
     return None
   if stk.right is not None:
-    return findLeftMost(stk.right)
+    return findMin(stk.right)
   return stk
-
-
-def findNode(root: Node, val: int) -> Node:
-  if root is None:
-    return None
-  if root.data == val:
-    return root 
-  if root.data < val:
-    return findNode(root.right, val)
-  return findNode(root.left, val)
-
-
-def insert(node: Node, data: int) -> Node:
-  if node is None:
-    return Node(data)
-  if data == node.data:
-    return node
-  if data > node.data:
-    node.right = insert(node.right, data)
-  else:
-    node.left = insert(node.left, data)
-  return node
-
-
-def findLeftMost(n: Node) -> Node:
-  current = n 
-  if current is None:
-    return None
-  while current.left is not None:
-    current = current.left
-  return current
-
 
 def test0():
   n = insert(None, 10)
